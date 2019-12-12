@@ -12,7 +12,7 @@ public class Inventory {
         
     }
 
-    public Object[] getAll(){}
+    public ArrayList<Object> getAll(){}
 
     public void add(Object e,int n){}
 
