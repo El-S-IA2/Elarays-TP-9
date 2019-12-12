@@ -38,7 +38,10 @@ public class Inventory {
     public void add(Object e,int n) {
 
         if (n < 0) {
-            throw new IllegalArgumentException("n negatif");}
+            throw new IllegalArgumentException("n negatif");
+        }
+
+        if (n > 0) {
 
             if (inventaire.size() == 0)
                 inventaire.add(new Entry(e, n));
@@ -56,8 +59,30 @@ public class Inventory {
                     inventaire.add(new Entry(e, n));
             }
         }
+    }
 
 
-    public void remove (Object e,int n){}
+    public void remove (Object e,int n) throws InventoryException {
+        if (n < 0) {
+            throw new IllegalArgumentException("n negatif");}
+
+        int len = inventaire.size();
+        for (int i = 0; i < inventaire.size(); i++) {
+            if (inventaire.get(i).getFirst() == e) {
+                if (inventaire.get(i).getSecond()<n) {
+                    throw new InventoryException("n superieur");
+                }
+                if (inventaire.get(i).getSecond()==n) {
+                    inventaire.remove(i);
+                }
+                else {
+                    inventaire.get(i).setSecond(-n);
+                }
+            }
+        }
+    }
+
+
+
 
 }

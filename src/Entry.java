@@ -18,7 +18,7 @@ public class Entry {
 
 
     public void setSecond(int quantite) {
-        this.second += quantite;
+            this.second += quantite;
     }
 
 }
