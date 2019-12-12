@@ -1,14 +1,12 @@
 public class Book {
 
-    static String auteur,titre,ISBN;
-    static int prix;
+    private final String auteur,titre,ISBN;
+    private final double prix;
 
-    public Book(int prix,String auteur,String ISBN,String titre) {
+    public Book(double prix,String auteur,String ISBN,String titre) {
         this.prix=prix;
         this.auteur=auteur;
         this.ISBN=ISBN;
         this.titre=titre;
     }
-
-
 }
