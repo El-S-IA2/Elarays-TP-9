@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,16 +56,25 @@ class InventoryTest {
         Book b1 = new Book(11, "Said", "DZAIUDZI763", "LEBG");
         Book b2 = new Book(18, "SaidElarays", "DZAIUDZI79993", "LEBOSS");
         Book b3 = new Book(11, "Mohamed", "DZAUUUDZI763", "le");
-        Book b4 = new Book(113, "Mohagdymed", "DZAUUUDIFZI763", "lehfd");
+        Book b4 = new Book(113, "Mohagdymed", "DZAUUUDZI763", "lehfd");
 
         inventaire.add(b1,5);
         inventaire.add(b2,9);
         inventaire.add(b3,0);
         inventaire.add(b3,5);
+        inventaire.add(b4,5);
 
         assertEquals(5, inventaire.get(b1));
         assertEquals(9, inventaire.get(b2));
-        assertEquals(5, inventaire.get(b3));
+        assertEquals(6, inventaire.get(b3));
+        //assertTrue(b4.equals(b3));
+
+        assertEquals(3, inventaire.getAll().size());
+        System.out.println(b1);
+        System.out.println(b2);
+        System.out.println(b3);
+        System.out.println(b4);
+        System.out.println(inventaire.getAll());
     }
 
     @org.junit.jupiter.api.Test

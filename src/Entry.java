@@ -1,14 +1,14 @@
 public class Entry {
 
-    private final Object first;
+    private final Book first;
     private int second;
 
-    public Entry(Object e, int quantite) {
+    public Entry(Book e, int quantite) {
         this.first = e;
         this.second = quantite;
     }
 
-    public Object getFirst() {
+    public Book getFirst() {
         return first;
     }
 
