@@ -2,33 +2,29 @@ import java.util.*;
 
 public class Inventory {
 
-    public List<Entry> inventaire;
+    /**
+     * Entrée de l’inventaire : couple composé d’un élément et de la quantité qui lui est associée
+     */
+    public List <Entry> inventaire;
 
+    /**
+     * Consructeur de Inventory
+     */
     public Inventory() {
         inventaire = new ArrayList<Entry>();
-
-        /*Book book1 = new Book(15, "Chinua Achebe", "0292107315", "Le monde s'effondre");
-        Book book2 = new Book(20, "Miguel de Cervantes", "8964730182", "Don Quichotte");
-        Book book3 = new Book(19, "Homère", "2803918263", "Odyssée");
-        Book book4 = new Book(10, "Albert Camus", "2394827638", "L'Étranger");
-        Book book5 = new Book(22, "Alexandre Dumas", "2253008885", "Les Trois Mousquetaires");
-        Book book6 = new Book(22, "Caterina Mognato", "2253008885", "Les Trois Mousquetaires");
-
-        add(book1,5);
-        add(book2,5);
-        add(book3,5);
-        add(book4,5);
-        add(book5,5);
-        add(book6,5);*/
-
-
     }
 
-    public int get(Object n){
+    /**
+     * Methode get : indique la quantité associée à l’élément e
+     * Si l'element n'existe pas alors on renvoie 0
+     * @param e l'element à rechercher
+     * @return la quantitée associée
+     */
+    public int get(Object e){
         Iterator<Entry> it= inventaire.iterator();
         while(it.hasNext()) {
             Entry couple = it.next();
-            if (couple.getFirst()==n) {
+            if (couple.getFirst()==e) {
                 return couple.getSecond();
             }
         }
@@ -36,7 +32,10 @@ public class Inventory {
     }
 
 
-
+    /**
+     * Renvoie la liste des éléments présents dans l’inventaire, C.A.D  la quantitée associée est non nulle.
+     * @return Une liste d'objets
+     */
     public ArrayList<Object> getAll(){
         ArrayList<Object> listeElements = new ArrayList<>();
 
@@ -47,21 +46,26 @@ public class Inventory {
                 listeElements.add(couple.getFirst());
             }
         }
-
         return listeElements;
-
     }
 
-    public void add(Book e,int n) {
+
+    /**
+     * Ajoute dans l’inventaire l’élément e en quantité n.
+     * Si n est négatif, on lance une exception IllegalArgumentException.
+     * Si l’élément était déjà présent, on augmente la quantité associée.
+     * @param e L'objet à ajouter
+     * @param n la quantitée à augmenter
+     */
+    public void add(Object e,int n) {
 
         if (n < 0) {
-            throw new IllegalArgumentException("n negatif");
+            throw new IllegalArgumentException("ERREUR : n < 0");
         }
-
         if (n > 0) {
-
-            if (inventaire.size() == 0)
+            if (inventaire.size() == 0) {
                 inventaire.add(new Entry(e, n));
+            }
 
             else {
                 int len = inventaire.size();
@@ -71,12 +75,6 @@ public class Inventory {
                         inventaire.get(i).setSecond(n);
                         trouve = true;
                     }
-                    if (inventaire.get(i).getFirst().getISBN() == e.getISBN()) {
-                        e = inventaire.get(i).getFirst();
-                        inventaire.get(i).setSecond(1);
-                        trouve = true;
-                    }
-
                 }
                 if (!trouve)
                     inventaire.add(new Entry(e, n));
@@ -85,15 +83,22 @@ public class Inventory {
     }
 
 
-    public void remove (Object e,int n) throws InventoryException {
+    /**
+     * Retire de l’inventaire l’élément e en quantité n.
+     * Si n est négatif, on lance une exception IllegalArgumentException.
+     * @param e l'objet à retirer
+     * @param n La quantitée à retirer
+     * @throws InventoryException est lancé Si on tente de retirer plus d’éléments que l’inventaire n’en contient
+     */
+    public void remove (Object e, int n) throws InventoryException {
         if (n < 0) {
-            throw new IllegalArgumentException("n negatif");}
+            throw new IllegalArgumentException("ERREUR : n < 0");}
 
         int len = inventaire.size();
         for (int i = 0; i < inventaire.size(); i++) {
             if (inventaire.get(i).getFirst() == e) {
                 if (inventaire.get(i).getSecond()<n) {
-                    throw new InventoryException("n superieur");
+                    throw new InventoryException("ERREUR : n > la quantitée présente dans l'inventaire");
                 }
                 if (inventaire.get(i).getSecond()==n) {
                     inventaire.remove(i);
@@ -104,8 +109,4 @@ public class Inventory {
             }
         }
     }
-
-
-
-
 }

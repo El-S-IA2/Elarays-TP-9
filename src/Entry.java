@@ -1,14 +1,24 @@
 public class Entry {
 
-    private final Book first;
+    /**
+     * Champs de la classe Entry
+     */
+    private final Object first;
     private int second;
 
-    public Entry(Book e, int quantite) {
+    /**
+     * Constructeur de la classe Entry
+     * @param e Le 1er élement du couple
+     * @param quantite Le 2éme élement du couple
+     */
+    public Entry(Object e, int quantite) {
         this.first = e;
         this.second = quantite;
     }
 
-    public Book getFirst() {
+                                            //// Getter and Setter ////
+
+    public Object getFirst() {
         return first;
     }
 
