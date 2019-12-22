@@ -42,7 +42,7 @@ public class BookStore {
         for (int i=0;i < inventaireLivre.getAll().size() ; i++){
             Book objCourant= (Book) inventaireLivre.getInventaire().get(i).getFirst();
             if (stockTotal.containsKey(objCourant)) {
-                if(stockTotal.get(objCourant) - inventaireLivre.get(objCourant)==0){
+                if(stockTotal.get(objCourant) - inventaireLivre.get(objCourant) <1 ){
                     stockTotal.remove(objCourant);
                 }
                 else {
