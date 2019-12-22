@@ -1,5 +1,9 @@
 import java.util.Comparator;
 
+/**
+ * une énumération Criteria
+ */
+
 public enum Criteria {
 
 
@@ -10,6 +14,12 @@ public enum Criteria {
     PRICE;
 
 
+    /**
+     * Trier les livres selon différents critères : par auteur, titre ou prix.
+     * @param b Si le booléen est vrai, le comparateur compare les livres par ordre croissant,
+     *          Sinon par ordre décroissant.
+     * @return  Un comparateur de livre associé au critère courant.
+     */
     public Comparator<Book> getComparator(boolean b) {
         if (b) {
             switch (this) {

@@ -76,14 +76,14 @@ public class Inventory {
 
             else {
                 int len = inventaire.size();
-                boolean trouve = false;
+                boolean estPresent = false;
                 for (int i = 0; i < len; i++) {
                     if (inventaire.get(i).getFirst() == e) {
                         inventaire.get(i).setSecond(n);
-                        trouve = true;
+                        estPresent = true;
                     }
                 }
-                if (!trouve)
+                if (!estPresent)
                     inventaire.add(new Entry(e, n));
             }
         }

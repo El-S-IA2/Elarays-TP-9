@@ -2,7 +2,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryTeste {
     Inventory inventaire = new Inventory();
@@ -46,11 +45,11 @@ class InventoryTeste {
         assertEquals(5, inventaire.get(b1));
         assertEquals(9, inventaire.get(b2));
         assertEquals(10, inventaire.get(b3));
-        System.out.println(b1);
-        System.out.println(b2);
-        System.out.println(b3);
-        System.out.println(b4);
-        System.out.println(inventaire.getAll());
+//        System.out.println(b1);
+//        System.out.println(b2);
+//        System.out.println(b3);
+//        System.out.println(b4);
+//        System.out.println(inventaire.getAll());
     }
 
     @Test

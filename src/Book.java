@@ -59,11 +59,9 @@ public class Book {
 
 
 
-                                    //// Getter ////
 
-    public String getISBN() {
-        return ISBN;
-    }
+
+                                    //// Getter ////
 
     public String getAuteur() {
         return auteur;
