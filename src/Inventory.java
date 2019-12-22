@@ -5,13 +5,21 @@ public class Inventory {
     /**
      * Entrée de l’inventaire : couple composé d’un élément et de la quantité qui lui est associée
      */
-    public List <Entry> inventaire;
+    private List <Entry> inventaire;
 
     /**
      * Consructeur de Inventory
      */
     public Inventory() {
         inventaire = new ArrayList<Entry>();
+    }
+
+    /**
+     * getter de inventaire
+     * @return inventaire
+     */
+    public List<Entry> getInventaire() {
+        return inventaire;
     }
 
     /**
@@ -36,9 +44,8 @@ public class Inventory {
      * Renvoie la liste des éléments présents dans l’inventaire, C.A.D  la quantitée associée est non nulle.
      * @return Une liste d'objets
      */
-    public ArrayList<Object> getAll(){
-        ArrayList<Object> listeElements = new ArrayList<>();
-
+    public List<Object> getAll(){
+        List <Object> listeElements = new ArrayList<Object>() ;
         Iterator<Entry> it= inventaire.iterator();
         while(it.hasNext()) {
             Entry couple = it.next();

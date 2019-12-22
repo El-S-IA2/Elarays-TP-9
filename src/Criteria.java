@@ -1,4 +1,3 @@
-import java.util.Collections;
 import java.util.Comparator;
 
 public enum Criteria {

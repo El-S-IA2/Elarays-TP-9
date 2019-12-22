@@ -12,11 +12,26 @@ public class main {
         Book book5 = new Book(22, "Alexandre Dumas", "123", "Les Trois Mousquetaires");
         Book book6 = new Book(25, "Caterina Mognato", "123", "Les Trois Mousquetaires");
 
-        Object obj = book5;
-        System.out.println(obj.equals(book6));
+//        Object obj = book5;
+//        System.out.println(obj.equals(book6));
+
+        Inventory inventory=new Inventory();
+
+        inventory.add(book1,2);
+        inventory.add(book2,4);
+        inventory.add(book3,6);
+        inventory.add(book4,7);
+        inventory.add(book5,10);
+        inventory.add(book6,25);
+
+        BookStore store = new BookStore();
+        store.restock(inventory);
+
+//        System.out.println(store.get(book5));
+        System.out.println(store);
 
 
-        ArrayList<Book> books = new ArrayList<>();
+        Set<Book> books = new HashSet<>();
         books.add(book1);
         books.add(book2);
         books.add(book3);
@@ -24,11 +39,13 @@ public class main {
         books.add(book5);
         books.add(book6);
 
-        System.out.println(books.size());
-        Collections.sort(books,Criteria.PRICE.getComparator(false));
-        for(Book str: books){
-            System.out.println(str);
-        }
+//        System.out.println(books.size());
+//        System.out.println(books);
+
+        //Collections.sort(books,Criteria.PRICE.getComparator(true));
+        //for(Book str: books){
+            //System.out.println(str);
+        //}
 
 
     }

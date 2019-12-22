@@ -27,13 +27,10 @@ public class Book {
      */
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder
-                .append(" auteur : ").append(auteur)
-                .append(" , titre : ").append(titre)
-                .append(" , ISBN : ").append(ISBN)
-                .append(" , prix : ").append(prix);
-        return builder.toString();
+        return " auteur : " + auteur +
+                " , titre : " + titre +
+                " , ISBN : " + ISBN +
+                " , prix : " + prix + "\n";
     }
 
     /**
@@ -55,10 +52,12 @@ public class Book {
      */
     @Override
     public int hashCode() {
-        int hash = 16;
-        hash = 31 * hash + ISBN.hashCode();
+        int hash = 10;
+        hash = 31 + hash + this.ISBN.hashCode();
         return hash;
     }
+
+
 
                                     //// Getter ////
 

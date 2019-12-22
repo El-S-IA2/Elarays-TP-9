@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class InventoryTeste {
     Inventory inventaire = new Inventory();
 
+
     Book b1 = new Book(11, "Said", "DZAIUDZI763", "LEBG");
     Book b2 = new Book(18, "SaidElarays", "DZAIUDZI79993", "LEBOSS");
     Book b3 = new Book(11, "Mohamed", "DZAUUUDZI763", "le");
